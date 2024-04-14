@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. sign up  page 2</title>
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #4ABAC6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main_container{
+    /* bhai ye compulsory dena padega */
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container{
+    height: 37.5rem;
+    width: 30rem;
+    background-color: #ccf1fa;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* align-items: start; */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+
+}
+label{
+    display: flex;
+}
+h1{
+    text-align: center;
+} 
+.heading{
+    padding-bottom: 2rem;
+}
+form{
+    font-weight:400;
+}
+form input{
+    /* width: 100%; */
+    padding: 0.3rem;
+    border: none;
+    border: solid gray 0.1rem;
+    border-radius: 0.35rem;
+    outline: none;
+}
+.prof_details_box h3{
+    font-size: 1.35rem;
+    padding-bottom: 1.5rem;
+    padding-top: 1rem;
+}
+.med_license_num input{
+    width: 100%;
+    margin-bottom: 1rem;
+}
+.specs_box input{
+    width: 100%;
+    margin-bottom: 1rem;   
+}
+.hospital_name_box input{
+    width: 100%;
+    margin-bottom: 1rem;      
+}
+.experience_box input{
+    width: 100%;
+    margin-bottom: 1rem;      
+}
+.practice_loc_box h3{
+    font-size: 1.35rem;
+    padding-bottom: 1.5rem;
+    padding-top: 1.25rem;
+}
+.practice_loc_box input{
+    width: 100%;
+    margin-bottom: 1rem;
+}
+.next_page{
+    display: flex;
+    justify-content: space-between;
+    /* padding-left: 22.30rem;  */
+    padding-top: 1rem;
+}
+.next_page input{
+    background-color: #47a2a2;
+    color: white;
+}
+    </style>
+</head>
+<body>
+    <div class="main_container">
+
+        <div class="container">
+            <form>
+
+                <div class="prof_details_box">
+
+                    <h3>Professional Details</h3>
+
+                    <div class="med_license_num">
+                        <label for="">Medical License Number</label>
+                        <input type="tel" maxlength="10" minlength="5">
+                    </div>
+
+                    <div class="specs_box">
+                        <label for="">Specialization</label>
+                        <input type="text">
+                    </div>
+
+                    <div class="hospital_name_box">
+                        <label for="">Hospital / Clinic Name</label>
+                        <input type="text">
+                    </div>
+
+                    <div class="experience_box">
+                        <label for="">Years of Experience</label>
+                        <input type="tel" maxlength="2" minlength="1">
+                    </div>
+
+                </div>
+
+                <div class="practice_loc_box">
+
+                    <h3>Practice Location</h3>
+
+                    <div class="address_box">
+                        <label for="">Address</label>
+                        <input type="text">
+                    </div>
+
+                    <div class="state_box">
+                        <label for="">State</label>
+                        <input type="text">
+                    </div>
+                    
+                </div>
+
+                <div class="next_page">
+                    <a href="doctor_signup_1.html"><input class="btn" type="button" value="Prev Page"></a>
+                    <a href="doctor_signup_3.html"><input class="btn" type="button" value="Next Page"></a>
+
+                </div>
+
+
+
+                
+            </form>
+        </div>
+    </div>
+</body>
+</html>

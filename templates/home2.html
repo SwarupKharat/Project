@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Home</title>
+
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+
+   <!-- custom css file link  -->
+   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+<body>
+
+<header class="header">
+
+   <section class="flex">
+
+      <a href="#" class="logo"><i class="fas fa-heartbeat"></i><span>Revika</span></a>
+
+      <form action="search.html" method="post" class="search-form">
+         <input type="text" name="search_box" required placeholder="Search for disease" maxlength="100">
+         <button type="submit" class="fas fa-search"></button>
+      </form>
+
+      <div class="icons">
+         <div id="menu-btn" class="fas fa-bars"></div>
+         <div id="search-btn" class="fas fa-search"></div>
+         <div id="user-btn" class="fas fa-user"></div>
+         <div id="toggle-btn" class="fas fa-sun"></div>
+      </div>
+
+      <div class="profile">
+         <img src="{{ url_for('static', filename='images1/profile-pic.png') }}" class="image" alt="">
+         <h3 class="name">Patient Name</h3>
+         <p class="role">Patient</p>
+         <a href="{{ url_for('static', filename='patientlogin.html') }}" class="btn">Patient Login</a>
+         <div class="flex-btn">
+            <a href="{{ url_for('static', filename='doctorlogin.html') }}" class="option-btn">Doctor Login</a>
+            <!-- <a href="register.html" class="option-btn">Doctor L</a> -->
+         </div>
+      </div>
+
+   </section>
+
+</header>
+
+<div class="side-bar">
+
+   <div id="close-btn">
+      <i class="fas fa-times"></i>
+   </div>
+
+   <div class="profile">
+      <img src="{{ url_for('static', filename='images1/profile-pic.png') }}" class="image" alt="">
+      <h3 class="name">Patient Name</h3>
+      <p class="role">Patient</p>
+      <a href="{{ url_for('static', filename='patientdashboard.html') }}" class="btn">View Profile</a>
+   </div>
+
+   <nav class="navbar">
+      <a href="{{ url_for('static', filename='calender.html') }}"><i class="fas fa-calendar-alt"></i><span>Calender</span></a>
+      <a href="{{ url_for('static', filename='patientdashboard.html') }}"><i class="fa fa-dashboard"></i><span>Patient Dashboard</span></a>
+      <a href="{{ url_for('static', filename='drdashboard.html') }}"><i class="fa fa-dashboard"></i><span>Dr Dashboard</span></a>
+      <a href="#"><i class="fas fa-comments"></i><span>Chat</span></a>
+      <a href="{{ url_for('static', filename='about.html') }}"><i class="fas fa-question"></i><span>About</span></a>
+   </nav>
+
+</div>
+
+<section class="home-grid">
+
+   <h1 class="heading">Disease Prediction Models</h1>
+
+   <div class="box-container">
+
+      <div class="box">
+         <h3 class="title">Heart Disease</h3>
+         <div class="flex">
+            <form action='/predict' method="post">
+               <input type="text" name="age" placeholder="age" required="required" />
+                <input type="text" name="sex" placeholder="sex" required="required" />
+              <input type="text" name="cp" placeholder="cp" required="required" />
+              <input type="text" name="trestbps" placeholder="trestbps" required="required" />
+                <input type="text" name="chol" placeholder="chol" required="required" />
+                <input type="text" name="fbs" placeholder="fbs" required="required" />
+                <input type="text" name="restecg" placeholder="restecg" required="required" />
+                <input type="text" name="thalach" placeholder="thalach" required="required" />
+                <input type="text" name="exang" placeholder="exang" required="required" />
+                <input type="text" name="oldpeak" placeholder="oldpeak" required="required" />
+                <input type="text" name="slope" placeholder="slope" required="required" />
+                <input type="text" name="ca" placeholder="ca" required="required" />
+                <input type="text" name="thal" placeholder="thal" required="required" />
+
+
+                <input class="butt" type="submit" value="Predict">
+            </form>
+
+           <h3>{{r1}}</h3>
+
+
+            <!-- <a href="#"><span>Thirsty</span></a>
+            <a href="#"><span>Weight loss</span></a>
+            <a href="#"><span>Hungry</span></a>
+            <a href="#"><span>Blurry vision</span></a>
+            <a href="#"><span>Tired</span></a>
+            <a href="#"><span>Dry skin</span></a>
+            <a href="#"><span>Numb hands</span></a>
+            <a href="#"><span>Headache</span></a> -->
+         </div>
+      </div>
+
+      <div class="box">
+         <h3 class="title">Diabetes</h3>
+         <div class="flex">
+            <form action='/predict1' method="post">
+               <input type="text" name="Pregnancies" placeholder="Pregnancies" required="required" />
+                <input type="text" name="Glucose" placeholder="Glucose" required="required" />
+              <input type="text" name="BloodPressure" placeholder="BloodPressure" required="required" />
+              <input type="text" name="SkinThickness" placeholder="SkinThickness" required="required" />
+                <input type="text" name="Insulin" placeholder="Insulin" required="required" />
+                <input type="text" name="BMI" placeholder="BMI" required="required" />
+                <input type="text" name="DiabetesPedigreeFunction" placeholder="DiabetesPedigreeFunction" required="required" />
+                <input type="text" name="Age" placeholder="Age" required="required" />
+
+                <input class="butt" type="submit" value="Predict">
+            </form>
+
+           <h3>{{r2}}</h3>
+         </div>
+      </div>
+
+      <div class="box">
+         <h3 class="title">Parkinsons Disease</h3>
+         <div class="flex">
+            <form action='/predict2' method="post">
+               <input type="text" name="in1" placeholder="Fo" required="required" />
+                <input type="text" name="in2" placeholder="Fhi" required="required" />
+              <input type="text" name="in3" placeholder="Flo" required="required" />
+              <input type="text" name="in4" placeholder="Jitter" required="required" />
+                <input type="text" name="in5" placeholder="JitterAbs" required="required" />
+                <input type="text" name="in6" placeholder="RAP" required="required" />
+                <input type="text" name="in7" placeholder="PPQ" required="required" />
+                <input type="text" name="in8" placeholder="DDP" required="required" />
+                <input type="text" name="in9" placeholder="Shimmer" required="required" />
+                <input type="text" name="in10" placeholder="ShimmerdB" required="required" />
+                <input type="text" name="in11" placeholder="APQ3" required="required" />
+                <input type="text" name="in12" placeholder="APQ5" required="required" />
+                <input type="text" name="in13" placeholder="APQ" required="required" />
+                <input type="text" name="in14" placeholder="DDA" required="required" />
+                <input type="text" name="in15" placeholder="NHR" required="required" />
+                <input type="text" name="in16" placeholder="HNR" required="required" />
+                <input type="text" name="in17" placeholder="RPDE" required="required" />
+                <input type="text" name="in18" placeholder="DFA" required="required" />
+                <input type="text" name="in19" placeholder="spread1" required="required" />
+                <input type="text" name="in20" placeholder="spread2" required="required" />
+                <input type="text" name="in21" placeholder="D2" required="required" />
+                <input type="text" name="in22" placeholder="PPE" required="required" />
+
+
+
+                <input class="butt" type="submit" value="Predict">
+            </form>
+
+           <h3>{{r3}}</h3>
+
+         </div>
+      </div>
+
+      <div class="box">
+         <h3 class="title">Liver Disease</h3>
+         <div class="flex">
+            <form action='/predict3' method="post">
+               <input type="text" name="Age" placeholder="Age" required="required" />
+                <input type="text" name="Gender" placeholder="Gender" required="required" />
+              <input type="text" name="Total_Bilirubin" placeholder="Total_Bilirubin" required="required" />
+              <input type="text" name="Direct_Bilirubin" placeholder="Direct_Bilirubin" required="required" />
+                <input type="text" name="Alkaline_Phosphotase" placeholder="Alkaline_Phosphotase" required="required" />
+                <input type="text" name="Alamine_Aminotransferase" placeholder="Alamine" required="required" />
+                <input type="text" name="Aspartate_Aminotransferase" placeholder="Aspartate" required="required" />
+                <input type="text" name="Total_Protiens" placeholder="Total_Protiens" required="required" />
+                <input type="text" name="Albumin" placeholder="Albumin" required="required" />
+                <input type="text" name="Albumin_and_Globulin_Ratio" placeholder="Albumin_and_Globulin_Ratio" required="required" />
+
+                <input class="butt" type="submit" value="Predict">
+            </form>
+
+           <h3>{{r4}}</h3>
+         </div>
+      </div>
+
+      <!-- <div class="box">
+         <h3 class="title">Pick</h3>
+         <div class="flex">
+            <a href="#"><span>Diabetes</span></a>
+            <a href="#"><span>Heart Disease</span></a>
+            <a href="#"><span>Liver Disease</span></a>
+            <a href="#"><span>Parkinsons</span></a>
+            <a href="#"><span>Viral</span></a>
+            <a href="#"><span>TB</span></a>
+         </div>
+      </div> -->
+
+   </div>
+
+</section>
+
+
+
+<section class="courses">
+
+   <h1 class="heading">Problems</h1>
+
+   <div class="box-container">
+
+      <h1>All the problems will be displayed here</h1>
+
+   </div>
+
+</section>
+
+<section class="courses">
+
+   <h1 class="heading">Allergies</h1>
+
+   <div class="box-container">
+
+      <h1>All the allergies will be displayed here</h1>
+
+   </div>
+
+</section>
+
+<section class="courses">
+
+   <h1 class="heading">Medications</h1>
+
+   <div class="box-container">
+
+      <h1>Medications to the problems will be displayed here</h1>
+
+   </div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- custom js file link  -->
+<script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}">
+</script>
+
+
+</body>
+</html>

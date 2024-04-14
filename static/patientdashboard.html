@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Profile</title>
+    <style>
+        *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color:#4ABAC6;
+}
+.heading{
+    font-size:2rem;
+
+   
+}
+
+
+.grid_container{
+    /* background-color: #f2f0c1c1; */
+    height:20rem;
+    width: 80rem;
+    margin-left: 10rem;
+    margin-top: 0.5rem;
+    display: grid;
+    gap: 0.75rem;
+    grid-template-areas: 
+    "photo heart temp glucose"
+    "photo report report report"
+    "info prescription prescription prescription"
+    "info prescription prescription prescription"
+    ;
+    /* background-color: #c8f4f986; */
+
+}
+
+.items{
+
+    /* background-color: rgba(212, 225, 34, 0.804); */
+    padding:2.75rem;
+    /* borderer: solid gray 0.1rem; */
+    /* box-shadow:0px 5px 10px 0px rgba(0, 0, 0, 0.3); */
+    
+    border-radius: 1rem;
+    background-color:#4ab9c6a8;
+    /* color: white; */
+
+}
+
+#photo{
+    grid-area:photo ;  
+    height: 18rem;  
+    /* width: 30rem; */
+    /* background-color: #fff; */
+    /* background-color:#04cbd2; */
+    /* color: white; */
+    /* background-color:#ccf1fa; */
+    /* background-color: #47a2a2; */
+    background-color:#ccf1fa;
+    
+}
+.photo_container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* .photo_box{
+    height: 8rem;
+    width: 8rem;
+    border-radius: 0.5rem;
+    margin-top: -0.5rem;
+    margin-bottom: 0.5rem;
+} */
+#patient_img{
+    height:9rem;
+    width:9rem;
+    margin-top: -1.5rem;
+    margin-left: 0.65rem;
+}
+.name{
+    padding-top: 0.5rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    padding-bottom: 0.25rem;
+}
+.age{
+    font-weight: 300;
+}
+.btn{
+    /* padding: 3rem; */
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-top: 0.75rem;
+    border-radius: 0.5rem;
+    border: none;
+    background-color: #05ad72e7;
+    color: white;
+    font-weight: 600;
+    transition: all 0.1s linear;
+}
+.btn:hover{
+    transform: scale(1.15);
+}
+
+#info{
+    grid-area:info ;
+    height: 24rem;
+    /* display: flex; */
+    margin-top: -5.5rem;
+    /* width: 30rem; */   
+    /* background-color: #fff; */
+    /* background-color:#ccf1fa; */
+    /* background-color: #47a2a2; */
+    background-color:#ccf1fa;
+}
+
+.info_heading{
+    /* padding-bottom: 1rem; */
+    font-size:1.25rem;
+    margin-top: -1rem;
+    /* padding-left: 2rem; */
+}
+.info_boxes{
+    display: flex;
+}
+.left_box{
+    font-size: 1.1rem;
+    padding-top: 2rem;
+    width: 8rem;
+    font-weight: 600;
+    
+    
+}
+.right_box{
+    font-size: 1.1rem;
+    padding-top: 2rem;
+}
+#pad{
+    padding-bottom: 1rem;
+}
+#heart{
+    grid-area:heart ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* margin: 3rem; */
+    /* padding: -10rem; */
+    /* background-color: #fff; */
+    /* background-color: #4cafaf; */
+    background-color: #ccf1fa;
+    transition: all 0.2s linear;
+}
+#heart:hover{
+    transform: scale(1.05);
+    background-color: #ffffff;
+}
+#heart_img{
+    height: 4rem;
+    width: 4rem;
+}
+.rate{
+    font-size: 1.5rem;
+}
+#temp{
+    grid-area: temp;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background-color: #fff; */
+    /* background-color: #4cafaf; */
+    background-color: #ccf1fa;
+    transition: all 0.2s linear;
+}
+#temp:hover{
+    transform: scale(1.05);
+    background-color: #ffffff;
+}
+.temp{
+    font-size: 1.5rem;
+}
+#temp_img{
+    height: 4rem;
+    width: 4rem;
+
+}
+#glucose{
+    grid-area:glucose ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background-color: #fff; */
+    /* background-color:#4cafaf; */
+    background-color: #ccf1fa;
+    transition: all 0.2s linear;
+}
+#glucose:hover{
+    transform: scale(1.05);
+    background-color:#ffffff;
+
+}
+#glucose_img{
+    height: 4rem;
+    width: 4rem;
+}
+.val{
+    font-size: 1.5rem;
+}
+#report{
+    grid-area:report ;
+    height: 10rem;
+    background-color: #ccf1fa;
+}
+.report_heading{
+    margin-top: -1rem;
+}
+.boxes{
+    display: flex;
+    margin: 2rem;
+    /* margin-left: 7rem; */
+    justify-content: space-between;
+    /* background-color: #fff; */
+    /* background-color: #6ad9d977; */
+    
+}
+.box_1{
+    display: flex;
+    /* border: solid gray 0.1rem; */
+    border-radius: 1rem;
+    /* margin-right: 5rem; */
+    height: 5rem;
+    width: 13rem;
+    justify-content: center;
+    align-items: center;
+    margin-top: -0.75rem;
+    background-color: #fff;
+    transition: all 0.2s linear;
+}
+.box_1:hover{
+    transform: scale(1.1);
+    background-color: #4ab9c6dd;
+}
+.box_1_r{
+    display: flex;
+    flex-direction: column;
+    /* font-weight: 500; */
+}
+
+.box_2{
+    display: flex;
+    /* border: solid gray 0.1rem; */
+    border-radius: 1rem;
+    /* margin-right: 5rem; */
+    height: 5rem;
+    width: 13rem;
+    justify-content: center;
+    align-items: center;
+    margin-top: -0.75rem;
+    background-color: #fff;
+    transition: all 0.2s linear;
+}
+.box_2:hover{
+    transform: scale(1.1);
+    background-color: #4ab9c6dd;
+}
+.box_2_r{
+    display: flex;
+    flex-direction: column;
+}
+
+.box_3{
+    display: flex;
+    /* border: solid gray 0.1rem; */
+    border-radius: 1rem;
+    /* margin-right: 5rem; */
+    height: 5rem;
+    width: 13rem;
+    justify-content: center;
+    align-items: center;
+    margin-top: -0.75rem;
+    background-color: #fff;
+    transition: all 0.2s linear;
+}
+.box_3:hover{
+    transform: scale(1.1);
+    background-color: #4ab9c6dd;
+}
+.box_3_r{
+    display: flex;
+    flex-direction: column;
+}
+#test_font{
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+#report_img{
+    height: 2rem;
+    width: 2rem;
+}
+
+
+
+
+
+#prescription{
+    grid-area:prescription ;
+    height: 18.5rem;
+    /* background-color: white; */
+    background-color: #ccf1fa;
+}
+.prescription_heading{
+    margin-bottom: 1rem;
+    margin-top: -1rem;
+}
+.add_prescription{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: dashed rgba(23, 42, 214, 0.844) 0.2rem;
+    border-radius: 1rem;
+    padding: 1rem;
+    /* font-size: 1.1rem; */
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #049f69e7;
+    background-color: white;
+    transition: all 0.2s linear;
+}
+.add_prescription:hover{
+    background-color:rgb(233, 231, 231);
+    transform: scale(0.99);
+}
+.rows{
+    display: flex;
+    flex-direction: column;
+    margin: 3rem;
+    /* margin-top: -0.00001rem; */
+    /* margin-bottom: 1rem; */
+}
+.row_1{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 1.25rem;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+.row_2{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 1.5rem;
+    /* background-color: rgba(128, 128, 128, 0.5); */
+    border-radius: 1rem;
+    font-size: 1.05rem;
+}
+.row_2_prescri{
+    display: flex;
+}
+.row_3_prescri{
+    display: flex;
+}
+
+#prescri_img{
+    height: 1.5rem;
+    width: 1.75rem;
+}
+.row_3{
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.05rem;
+}
+
+.grid_container .photo_container .photo_box img{
+    margin-left: -2rem;
+}
+    </style>
+</head>
+<body>
+    <div class="main_container">
+    
+        <!-- <div class="heading">
+            Current Appointment
+        </div> -->
+        <div class="grid_container">
+
+            <div class="items" id="photo">
+                <div class="photo_container">
+                    <div class="photo_box">
+                        <img src="./images1/profile-pic.png" id="patient_img">
+                    </div>
+                    <div class="name">
+                        Vrinda K.
+                    </div>
+                    <div class="age">
+                        Age: 36
+                    </div>
+                    <div class="update_btn">
+                        <input type="button" value="Update" class="btn">
+                    </div>
+                </div>              
+            </div>
+
+
+
+            <div class="items" id="info">
+                <div class="info_heading">
+                    <h3>Information</h3>
+                </div>
+                <div class="info_boxes">
+                    <div class="left_box">
+                        <div class="gender" id="pad">
+                            Gender:
+                        </div>
+                        <div class="blood" id="pad">
+                            Blood Type:
+                        </div>
+                        <div class="allergy" id="pad">
+                            Allergies:
+                        </div>
+                        <div class="disease" id="pad">
+                            Diseases:
+                        </div>
+                        <div class="ht" id="pad">
+                            Height:
+                        </div>
+                        <div class="wt" id="pad">
+                            Weight:
+                        </div>
+                        <div class="id" id="pad">
+                            Patient ID:
+                        </div>
+                        <div class="visit" id="pad">
+                            Last Visit:
+                        </div>
+                    </div>
+    
+                    <div class="right_box">
+                        <div class="a" id="pad">
+                            Male
+                        </div>
+                        <div class="b" id="pad">
+                            O+(Positive)
+                        </div>
+                        <div class="c" id="pad">
+                            Milk, Dust
+                        </div>
+                        <div class="d" id="pad">
+                            Diabetes
+                        </div>
+                        <div class="e" id="pad">
+                            178cm
+                        </div>
+                        <div class="f" id="pad">
+                            65kg
+                        </div>
+                        <div class="g" id="pad">
+                            212145540
+                        </div>
+                        <div class="h" id="pad">
+                            10th April 2024
+                        </div>
+                    </div>
+
+                </div>
+                
+            </div>
+
+
+
+            <div class="items" id="heart">
+                <div class="heart_img_box">
+                    <img src="./images1/download.png" alt="" id="heart_img">
+                </div>
+                <div class="heart_heading">
+                    <h3>Heart Rate</h3>
+                </div>
+                <div class="rate">
+                    80 bpm
+                </div>
+            </div>
+
+
+
+            <div class="items" id="temp">
+                <div class="tepm_img_box">
+                    <img src="./images1/temp.png" alt="" id="temp_img">
+                </div>
+                <div class="temp_heading">
+                    <h3>Body Temperature</h3>
+                </div>
+                <div class="temp">
+                    36.5 'c
+                </div>
+
+            </div>
+
+
+
+
+            <div class="items" id="glucose">
+                <div class="glucose_img_box">
+                    <img src="./images1/glucose.png" alt="" id="glucose_img">
+                </div>
+                <div class="glucose_heading">
+                    <h3>Glucose</h3>
+                </div>
+                <div class="val">
+                    100 mg/dl
+                </div>
+            </div>
+
+
+
+
+            <div class="items" id="report">
+                <div class="report_heading">
+                    <h3>Test Reports</h3>
+                </div>
+                <div class="boxes">
+
+                    <div class="box_1">
+                        <div class="box_1_l">
+                            <img src="./images1/report.png" alt="" id="report_img">
+                        </div>
+                        <div class="box_1_r">
+                            <p id="test_font">Blood Test Report</p>
+                            <p>12th February 2024</p>
+                        </div>
+                    </div>
+
+                    <div class="box_2">
+                        <div class="box_2_l">
+                            <img src="./images1/report.png" alt="" id="report_img">
+                        </div>
+                        <div class="box_2_r">
+                            <p id="test_font">Eye Test Report</p>
+                            <p>15th March 2024</p>
+                        </div>
+                    </div>
+
+                    <div class="box_3">
+                        <div class="box_3_l">
+                            <img src="./images1/report.png" alt="" id="report_img">
+                        </div>
+                        <div class="box_3_r">
+                            <p id="test_font">CT Scan-Full Body</p>
+                            <p>5th April 2024</p>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+
+            <div class="items" id="prescription">
+                <div class="prescription_heading">
+                    <h3>Prescriptions</h3>
+                </div>
+                <div class="add_prescription">
+                    <P>+Add a Prescription</P>
+                </div>
+
+                <div class="rows">
+                    <div class="row_1">
+                        <p>Prescription</p>
+                        <p>Date</p>
+                        <p>Duration</p>
+
+                    </div>
+                    <div class="row_2">
+                        <div class="row_2_prescri">
+                            <img src="./images1/prescription.png" alt="" id="prescri_img">
+                            <p>Heart Disease</p>
+                        </div>
+                        <p>20th November 2023</p>
+                        <p>3 Months</p>
+                    </div>
+                    <div class="row_3">
+                        <div class="row_3_prescri">
+                            <img src="./images1/prescription.png" alt="" id="prescri_img">
+                            <p>Skin Care</p>
+                        </div>
+                        <p> 6th December 2023</p>
+                        <p>2 Months</p>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-up form for Dr.</title>
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #4ABAC6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main_container{
+    /* bhai ye compulsory dena padega */
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container{
+    height: 37.5rem;
+    width: 30rem;
+    background-color: #ccf1fa;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* align-items: start; */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+
+}
+h1{
+    text-align: center;
+} 
+.heading{
+    padding-bottom: 2rem;
+}
+form{
+    font-weight:400;
+}
+form input{
+    /* width: 100%; */
+    padding: 0.3rem;
+    border: none;
+    border: solid gray 0.1rem;
+    border-radius: 0.35rem;
+    outline: none;
+}
+.personal_info_box h3{
+    padding-bottom: 1.5rem;
+    font-size: 1.35rem;
+}
+label{
+    display: flex;
+}
+.name_box{
+    padding-bottom: 1rem;
+}
+.fname input{
+    width: 100%;
+    margin-bottom: 1rem;
+}
+.lname input{
+    width: 100%;
+}
+
+legend{
+    padding-bottom: 0.5rem;
+}
+.female{
+    padding-bottom: 0.5rem;
+    padding-left: 0.25rem;
+}
+.male{
+    padding-bottom: 0.5rem;
+    padding-left: 0.25rem;
+}
+fieldset{
+    margin-bottom: 1rem;
+}
+
+.dob_box input{
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.email_box input{
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.phone_box input{
+    width: 100%;
+    margin-bottom: 1rem;
+
+}
+.next_page{
+    padding-left: 22.30rem; 
+}
+.next_page input{
+    background-color: #47a2a2;
+    color: white;
+}
+    </style>
+</head>
+<body>
+    <div class="main_container">
+
+        
+
+        <div class="container">
+            <div class="heading">
+                <h1>Dr. Sign Up </h1>
+            </div>
+            
+            <form>
+                <div class="personal_info_box">
+                    <h3>Personal Details</h3>
+                    <div class="name_box">
+                        <div class="fname">
+                            <label for="" >First Name</label> 
+                            <input type="text">
+                        </div>
+                        
+
+                        <div class="lname">
+                            <label for="">Last Name</label>
+                            <input type="text">
+                        </div>                       
+                    </div> 
+
+                    <div class="gender_dob">
+                        <div class="gender_box">
+                            <fieldset>
+                                <legend>Gender</legend>
+                                <div class="gender_option">
+                                    <div class="female">
+                                        <input type="checkbox">Female
+                                    </div>
+                                    <div class="male">
+                                        <input type="checkbox">Male
+                                    </div>
+                                </div>
+                            </fieldset>                       
+                        </div>
+
+                        <div class="dob_box">
+                            <label for="">Date of birth</label>
+                            <input type="date">
+                        </div>
+
+                    </div>
+
+                    <div class="email_box">
+                        <label for="">Email</label>
+                        <input type="email">
+                    </div>
+
+                    <div class="phone_box">
+                        <label for="">Phone Number</label>
+                        <input type="tel" maxlength="10" minlength="10">
+                    </div>
+
+                </div>
+
+                <div class="next_page">
+                    <a href="doctor_signup_2.html"><input class="btn" type="button" value="Next Page"></a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html> 
+
+                <!-- <div class="prof_details_box">
+
+                    <h3>Professional Details</h3>
+
+                    <div class="med_license_num">
+                        <label for="">Meadical License Number</label>
+                        <input type="tel" maxlength="10" minlength="5">
+                    </div>
+
+                    <div class="specs_box">
+                        <label for="">Specialization</label>
+                        <input type="text">
+                    </div>
+
+                    <div class="hospital_name_box">
+                        <label for="">Hospital / Clinic Name</label>
+                        <input type="text">
+                    </div>
+
+                    <div class="experience_box">
+                        <label for="">Years of Experience</label>
+                        <input type="tel" maxlength="2" minlength="1">
+                    </div>
+
+                </div>
+
+                <br>
+                <br>
+                <br>
+
+                <div class="practice_loc_box">
+
+                    <h3>Practice Location</h3>
+
+                    <div class="address_box">
+                        <label for="">Address</label>
+                        <input type="text">
+                    </div>
+
+                    <div class="state_box">
+                        <label for="">State</label>
+                        <input type="text">
+                    </div>
+                    
+                </div>
+
+                <br>
+                <br>
+                <br>
+
+                <div class="availability_box">
+
+                    <h3>Availability</h3>
+
+                    <div class="appointment_box">
+                        <label for="">Days and Hours Available for Appointment</label>
+                        <input type="text">
+                    </div>
+
+                    <div class="emergency_cont_box">
+                        <label for="">Emergency Contact Information</label>
+                        <input type="text">
+                    </div>
+                   
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+</body>
+</html> 

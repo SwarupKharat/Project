@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DR. PROFILE</title>
+    <style>
+        *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #4ABAC6;
+}
+.container{
+    display: flex;
+}
+
+.left_container{
+    height: 44rem;
+    width: 60rem;
+    margin-left: 2rem;
+    margin-top: 1rem;
+    background-color:#ccf1fac3;
+    /* background-color: #6ad9d957; */
+    border-radius: 1rem;
+    margin-right: 1rem;
+}
+.right_container{
+    height: 44rem;
+    width: 22rem;
+    margin-right: 2rem;
+    margin-top: 1rem;
+    background-color: #81cdcd;
+    /* background-color: #c4effb; */
+    border-radius: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.upper_line{
+    display: flex;
+    justify-content:end;
+    margin:1rem;
+    margin-right: 4.5rem;
+}
+ .search{
+    /* border: solid gray 0.1rem; */
+    border-radius: 0.5rem;
+    padding: 0.25rem;
+    background-color: #fff;
+    color: gray;
+    display: flex;
+} 
+.search input{
+    border: none;
+}
+#search_icon{
+    height:1.5rem;
+    width: 1.5rem;
+}
+
+.date{
+    margin-right: 1rem;
+    margin-top: 0.25rem;
+}
+.welcome_box{
+    display: flex;
+    height: 8rem;
+    width: 50rem;
+    background-color: #47a2a2;
+    margin-left: 5rem;
+    margin-right: 5rem;
+    border-radius: 1rem;
+    
+}
+
+
+.welcome_text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    margin-left:10rem ;
+    /* margin-top: 6rem; */
+}
+
+#nice_day{
+    /* padding-bottom: 5rem; */
+    font-size: 1.25rem;
+}
+#scope_img{
+    height: 25rem;
+    width: 15rem;
+    padding-bottom: 10rem;
+    margin-top: -4rem;
+    /* margin-left: 1rem; */
+}
+.boxes_upper_line{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 5rem;
+    margin-right: 5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+.report{
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+.this_month{
+    color: rgb(0, 0, 0);
+    font-size: 1.10rem;
+    margin-right: 0.5rem;
+}
+.boxes{
+    display: flex;
+}
+.patient_box{
+    height: 11rem;
+    width: 9rem;
+    /* border: solid gray 0.2rem; */
+    border-radius: 1rem;
+    margin-left: 8.5rem;
+    margin-right: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color:white;
+    box-shadow:0px 5px 10px 0px rgba(0, 0, 0, 0.4);
+    transition: all 0.2s linear;
+}
+.patient_box:hover{
+    transform: scale(1.1);
+    /* background-color: rgba(156, 154, 154, 0.529); */
+}
+#box1_img{
+    height: 5rem;
+    width: 5rem;
+}
+.consult_box{
+    height: 11rem;
+    width: 9rem;
+    /* border: solid gray 0.2rem; */
+    border-radius: 1rem;
+    margin-right: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    box-shadow:0px 5px 10px 0px rgba(0, 0, 0, 0.4);
+    transition: all 0.2s linear;
+}
+.consult_box:hover{
+    transform: scale(1.1);
+}
+#box2_img{
+    height: 5rem;
+    width: 5.5rem;
+}
+.surgery_box{
+    height: 11rem;
+    width: 9rem;
+    /* border: solid gray 0.2rem; */
+    border-radius: 1rem;
+    margin-right: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    box-shadow:0px 5px 10px 0px rgba(0, 0, 0, 0.4);
+    transition: all 0.2s linear;
+}
+.surgery_box:hover{
+    transform: scale(1.1);
+}
+#box3_img{
+    height: 5rem;
+    width: 8rem;
+
+}
+.add_box{
+    height: 11rem;
+    width: 9rem;
+    border: dashed rgb(82, 72, 227) 0.2rem;
+    color: blue;
+    font-weight: 600;
+    font-size: 1.5rem;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin-right: 2rem; */
+    background-color: #fff;
+    /* box-shadow:0px 5px 10px 0px rgba(0, 0, 0, 0.4); */
+    transition: all 0.2s linear;
+}
+.add_box:hover{
+    transform: scale(0.99);
+    background-color: #e0dede;
+}
+#numbers{
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+.appointment_box{
+    display: flex;
+    flex-direction: column;
+    margin-left: 5rem;
+    margin-right: 5rem;
+    /* margin-right:5rem; */
+    /* margin-top: -5rem; */
+    
+}
+
+.appoint_heading{
+    font-weight: 600;
+    font-size: 1.25rem;
+    /* margin-left: 2rem; */
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+    /* margin-top: -0.5rem; */
+}
+.heading{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    font-size: 1.15rem;
+    font-weight:600;
+    padding-right: 1.5rem;
+    padding-right: 1.5rem;
+}
+.appoint1{
+    display: flex;
+    justify-content: space-between;
+    /* text-align: center; */
+    height: 2.5rem;
+    width: 50rem;
+    background-color:white;
+    border-radius: 0.5rem;
+    margin-bottom: 0.25rem;
+    /* padding: 0.25rem; */
+    padding-top: 0.5rem;
+    transition: all 0.2s linear;
+}
+.appoint1:hover{
+    background-color: #cfcfcf;
+    transform: scaleX(1.025);
+}
+.appoint2{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.25rem;
+    height: 2.5rem;
+    width: 50rem;
+    background-color: white;
+    border-radius: 0.5rem;
+    padding-top: 0.5rem;
+    transition: all 0.2s linear;
+
+}
+.appoint2:hover{
+    background-color: #cfcfcf;
+    transform: scaleX(1.025);
+}
+.appoint3{
+    display: flex;
+    justify-content: space-between;
+    /* margin-bottom: 0.75rem; */
+    height: 2.5rem;
+    width: 50rem;
+    background-color:white;
+    border-radius: 0.5rem;
+    padding-top: 0.5rem;
+    transition: all 0.2s linear;
+}
+.appoint3:hover{
+    background-color: #cfcfcf;
+    transform: scaleX(1.025);
+}
+#img{
+    height: 2rem;
+    width: 2rem;
+    /* padding-left: 1rem; */
+    margin-right: 1rem;
+    /* padding-bottom: 0.25rem; */
+    
+}
+.patient_icon{
+    display: flex;
+    padding-left: 1rem; 
+}
+#status1{
+    padding-right: 2rem;
+    color: #18d363d5;
+}
+#status2{
+    padding-right: 2rem;
+    color: red;
+}
+#status3{
+    padding-right: 2rem;
+    color: rgb(0, 167, 245);
+}
+#time{
+    padding-left: 1rem;
+}
+#date{
+    padding-left: 2rem;
+}
+#name{
+    padding-left: 4rem;
+}
+
+
+
+
+
+
+
+
+.my_prof{
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-top: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+.profile_box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#dr_img{
+    height:9rem;
+    width: 9rem;
+    margin-bottom: 1rem;
+}
+
+#dr_name{
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: white;
+    
+}
+#therapist{
+    color: rgb(65, 63, 63);
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+}
+.rating_patient{
+    display: flex;
+    margin-bottom: 1.5rem;
+}
+.rating{
+    background-color: #fff;
+    height: 5rem;
+    width: 7rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+    margin-right: 6rem;
+    /* padding: 0.25rem; */
+    box-shadow:0px 5px 10px 0px rgba(0, 0, 0, 0.4);
+    transition: all 0.2s linear;
+}
+.rating:hover{
+    transform: scale(1.1);
+    /* background-color: rgb(235, 229, 229); */
+}
+.total_patient{
+    background-color: #fff;
+    height: 5rem;
+    width: 7rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+    box-shadow:0px 5px 10px 0px rgba(0, 0, 0, 0.4);
+    transition: all 0.2s linear;
+}
+.total_patient:hover{
+    transform: scale(1.1);
+
+}
+#no{
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.alert_heading{
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.new{
+    display: flex;
+    justify-content: space-between;
+    height: 4rem;
+    background-color: white;
+    /* justify-content: center; */
+    align-items: center;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    transition: all 0.2s linear;
+}
+.new:hover{
+    transform: scale(1.05);
+    background-color: #e0e0e0;
+}
+#tag{
+    font-weight: 600;
+}
+.cancel{
+    display: flex;
+    justify-content: space-between;
+    height: 4rem;
+    background-color: white;
+    /* justify-content: center; */
+    align-items: center;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    transition: all 0.2s linear;
+}
+.cancel:hover{
+    transform: scale(1.05);
+    background-color: #e0e0e0;
+}
+.review{
+    display: flex;
+    justify-content: space-between;
+    height: 4rem;
+    background-color: white;
+    /* justify-content: center; */
+    align-items: center;
+    border-radius: 0.5rem;
+    transition: all 0.2s linear;
+}
+.review:hover{
+    transform: scale(1.05);
+    background-color: #e0e0e0;
+}
+#alert_from{
+    color: rgb(57, 52, 52);
+}
+.new_right{
+    margin-right: 1rem;
+    color: rgb(155, 152, 152);
+}
+.new_left{
+    margin-left:1rem ;
+    display: flex;
+}
+
+#alert_img1{
+    height: 3rem;
+    width: 3rem;
+    border-radius: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+#alert_img2{
+    height: 3.5rem;
+    width: 3.5rem;
+    border-radius: 0.5rem;
+    /* margin-right: 0.5rem; */
+}
+
+#alert_img3{
+    height: 3.5rem;
+    width: 3.5rem;
+    border-radius: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+
+
+        <div class="left_container">
+
+            <div class="upper_line">
+                <!-- <div class="search">
+                    <input type="text" placeholder="Search for appointments...">
+                    <img src="./images/search.png" alt="" id="search_icon">
+                </div> -->
+                <div class="date">
+                    <p>11th April 2024</p>
+                </div>
+            </div>
+    
+            <div class="welcome_box">
+                <div class="welcome_text">
+                    <h1 >Welcome , Dr. Sahibaa </h1>
+                    <p id="nice_day">Have a Nice Day!</p>
+                </div>
+                <div class="sahiba_img">
+                    <img src="./images/scope.png" alt="" id="scope_img">
+                </div>
+                
+            </div>
+    
+            <div class="boxes_upper_line">
+                <div class="report">
+                    <p>Reports</p>
+                </div>
+                <div class="this_month">
+                    <p>This month</p>
+                </div>
+            </div>
+
+            <div class="boxes">
+
+                <div class="patient_box">
+                    <img src="./images/profile.png" alt="" id="box1_img">                  
+                    <p>Patients</p>
+                    <p id="numbers">512</p>
+                </div>
+
+                <div class="consult_box">
+                    <img src="./images/consult.png" alt="" id="box2_img">
+                    <p>Consultation</p>
+                    <p id="numbers">227</p>
+                </div>
+
+                <div class="surgery_box">
+                    <img src="./images/surgery.jpg" alt="" id="box3_img">
+                    <p>Surgery</p>
+                    <p id="numbers">35</p>
+                </div>
+
+                <div class="add_box">
+                    <p>+</p>
+                </div>
+
+            </div>
+
+
+            <div class="appointment_box">
+                <div class="appoint_heading">
+                    <P>My Appointments</P>
+                </div>
+                <div class="heading">
+                    <p id="name">Name</p>
+                    <p id="date">Date</p>
+                    <P id="time">Time</P>
+                    <p>Status</p>
+                </div>
+
+                <div class="appoint1">
+                    <div class="patient_icon">
+                        <img src="./images/patient.png" alt="" id="img">
+                        <p>Vrinda K.</p>
+                    </div>
+                    <p>12th April 2024</p>
+                    <P>10:00 AM</P>
+                    <p id="status1">First Visit</p>
+                </div>
+
+                <div class="appoint2">
+                    <div class="patient_icon">
+                        <img src="./images/patient.png" alt="" id="img">
+                        <p>Jay Shaha</p>
+                    </div>
+                    <p>15th April 2024</p>
+                    <P>12:30 PM</P>
+                    <p id="status2">Emergrncy</p>
+                </div>
+
+                <div class="appoint3">
+                    <div class="patient_icon">
+                        <img src="./images/patient.png" alt="" id="img">
+                        <p>R. Yadav</p>
+                    </div>
+                    <p>20th April 2024</p>
+                    <P>02:30 PM</P>
+                    <p id="status3">Consulting</p>
+                </div>
+            </div>
+    
+        </div>
+
+
+
+
+
+        <div class="right_container">
+            <div class="my_prof">
+                <p>My Profile</p>
+            </div>
+
+            <div class="profile_box">
+
+                <div class="dr_img_box">
+                    <img src="./images/dr1.png" alt="" id="dr_img">
+                </div>
+
+                <div class="name_box">
+                    <p id="dr_name">Dr. SAHIBAAA</p>
+                    <P id="therapist">Therapist</P>
+                </div>
+            </div>
+
+
+            <div class="rating_patient">
+                <div class="rating">
+                    <p>Overall Rating</p>
+                    <p id="no">4.3</p>
+                </div>
+                
+                <div class="total_patient">
+                    <p>Total Patients</p>
+                    <p id="no">327</p>
+                </div>
+            </div>
+
+
+            <div class="alert_box">
+                <div class="alert_heading">
+                    <p>Alert</p>
+                </div>
+
+                <div class="new">
+                    <div class="new_left">
+                        <img src="./images/appoint_img_1.png" alt="" id="alert_img1">
+                        <div class="new_text">
+                            <p id="tag">New Appointment</p>
+                            <p id="alert_from">Tina Zha</p>
+                        </div>
+                    </div>
+                    <div class="new_right">
+                        <p>30 minutes</p>
+                    </div>
+                </div>
+
+                <div class="cancel">
+                    <div class="new_left">
+                        <img src="./images/appoint_cancel.png" alt="" id="alert_img2">
+                        <div class="new_text">
+                            <p id="tag">Appointment Cancelled</p>
+                            <p id="alert_from">Jay Bansal</p>
+                        </div>
+                    </div>
+                    <div class="new_right">
+                        <p>1 hour</p>
+                    </div>
+                </div>
+
+                <div class="review">
+                    <div class="new_left">
+                        <img src="./images/review.png" alt="" id="alert_img3">
+                        <div class="new_text">
+                            <p id="tag">New Review</p>
+                            <p id="alert_from"> Ram Tiwari</p>
+                        </div>
+                    </div>
+                    <div class="new_right">
+                        <p>3 hours</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+        
+        
+
+
+
+    </div>
+</body>
+</html>

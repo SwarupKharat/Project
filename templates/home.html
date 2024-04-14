@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Home</title>
+
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+
+   <!-- custom css file link  -->
+   <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+<header class="header">
+
+   <section class="flex">
+
+      <a href="home.html" class="logo"><i class="fas fa-heartbeat"></i><span>Revika</span></a>
+
+      <form action="search.html" method="post" class="search-form">
+         <input type="text" name="search_box" required placeholder="Search for disease" maxlength="100">
+         <button type="submit" class="fas fa-search"></button>
+      </form>
+
+      <div class="icons">
+         <div id="menu-btn" class="fas fa-bars"></div>
+         <div id="search-btn" class="fas fa-search"></div>
+         <div id="user-btn" class="fas fa-user"></div>
+         <div id="toggle-btn" class="fas fa-sun"></div>
+      </div>
+
+      <div class="profile">
+         <img src="images/pic-1.jpg" class="image" alt="">
+         <h3 class="name">Patient Name</h3>
+         <p class="role">Patient</p>
+         <a href="patientlogin.html" class="btn">Patient Login</a>
+         <div class="flex-btn">
+            <a href="doctorlogin.html" class="option-btn">Doctor Login</a>
+            <!-- <a href="register.html" class="option-btn">Doctor L</a> -->
+         </div>
+      </div>
+
+   </section>
+
+</header>
+
+<div class="side-bar">
+
+   <div id="close-btn">
+      <i class="fas fa-times"></i>
+   </div>
+
+   <div class="profile">
+      <img src="images/pic-1.jpg" class="image" alt="">
+      <h3 class="name">Patient Name</h3>
+      <p class="role">Patient</p>
+      <a href="profile.html" class="btn">View Profile</a>
+   </div>
+
+   <nav class="navbar">
+      <a href="home.html"><i class="fas fa-home"></i><span>Home</span></a>
+      <a href="about.html"><i class="fas fa-question"></i><span>About</span></a>
+      <a href="courses1.html"><i class="fa fa-dashboard"></i><span>Dashboard</span></a>
+      <a href="teachers1.html"><i class="fas fa-comments"></i><span>Chat</span></a>
+      <a href="contact.html"><i class="fas fa-calendar-alt"></i><span>Calender</span></a>
+   </nav>
+
+</div>
+
+<section class="home-grid">
+
+   <h1 class="heading">Disease Prediction</h1>
+
+   <div class="box-container">
+
+      <div class="box">
+         <h3 class="title">Select</h3>
+         <div class="flex">
+            <form action='/predict' method="post">
+               <input type="text" name="age" placeholder="age" required="required" />
+                <input type="text" name="sex" placeholder="sex" required="required" />
+              <input type="text" name="cp" placeholder="cp" required="required" />
+              <input type="text" name="trestbps" placeholder="trestbps" required="required" />
+                <input type="text" name="chol" placeholder="chol" required="required" />
+                <input type="text" name="fbs" placeholder="fbs" required="required" />
+                <input type="text" name="restecg" placeholder="restecg" required="required" />
+                <input type="text" name="thalach" placeholder="thalach" required="required" />
+                <input type="text" name="exang" placeholder="exang" required="required" />
+                <input type="text" name="oldpeak" placeholder="oldpeak" required="required" />
+                <input type="text" name="slope" placeholder="slope" required="required" />
+                <input type="text" name="ca" placeholder="ca" required="required" />
+                <input type="text" name="thal" placeholder="thal" required="required" />
+
+
+                <input class="butt" type="submit" value="Predict">
+            </form>
+
+           <h3>{{r1}}</h3>
+
+
+            <!-- <a href="#"><span>Thirsty</span></a>
+            <a href="#"><span>Weight loss</span></a>
+            <a href="#"><span>Hungry</span></a>
+            <a href="#"><span>Blurry vision</span></a>
+            <a href="#"><span>Tired</span></a>
+            <a href="#"><span>Dry skin</span></a>
+            <a href="#"><span>Numb hands</span></a>
+            <a href="#"><span>Headache</span></a> -->
+         </div>
+      </div>
+
+      <div class="box">
+         <h3 class="title">Pick</h3>
+         <div class="flex">
+            <a href="#"><span>Diabetes</span></a>
+            <a href="#"><span>Heart Disease</span></a>
+            <a href="#"><span>Liver Disease</span></a>
+            <a href="#"><span>Parkinsons</span></a>
+            <a href="#"><span>Viral</span></a>
+            <a href="#"><span>TB</span></a>
+         </div>
+      </div>
+
+   </div>
+
+</section>
+
+
+
+<section class="courses">
+
+   <h1 class="heading">Problems</h1>
+
+   <div class="box-container">
+
+      <h1>All the problems will be displayed here</h1>
+
+   </div>
+
+</section>
+
+<section class="courses">
+
+   <h1 class="heading">Allergies</h1>
+
+   <div class="box-container">
+
+      <h1>All the allergies will be displayed here</h1>
+
+   </div>
+
+</section>
+
+<section class="courses">
+
+   <h1 class="heading">Medications</h1>
+
+   <div class="box-container">
+
+      <h1>Medications to the problems will be displayed here</h1>
+
+   </div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- custom js file link  -->
+<script src="js/script.js"></script>
+
+
+</body>
+</html>
